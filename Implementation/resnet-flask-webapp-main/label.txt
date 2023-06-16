@@ -1,0 +1,35 @@
+Alfalfa-Medicago sativa 
+Allium-Allium 
+Borage-Borago officinalis 
+Burdock-Arctium 
+Calendula-Calendula officinalis 
+Cattail-Typha 
+Chickweed-Stellaria media 
+Chicory-Cichorium intybus 
+Chive_blossom-Allium schoenoprasum 
+Coltsfoot-Tussilago farfara 
+Common_mallow-Malva neglecta 
+Common_milkweed-Asclepias syriaca 
+Common_vetch-Vicia sativa 
+Common_yarrow-Achillea millefolium 
+Coneflower-Echinacea 
+Cow_parsley-Anthriscus sylvestris 
+Cowslip-Primula veris 
+Crimson_clover-Trifolium incarnatum 
+Crithmum_maritimum-Crithmum 
+Daisy-Bellis perennis 
+Dandelion-Taraxacum 
+Fennel-Foeniculum vulgare 
+Fireweed-Chamaenerion angustifolium 
+Gardenia-Gardenia jasminoides 
+Garlic_mustard-Alliaria petiolata 
+Geranium-Pelargonium 
+Ground_ivy-Glechoma hederacea 
+Harebell-Campanula rotundifolia 
+Henbit-Lamium amplexicaule 
+Knapweed-Centaurea 
+Meadowsweet-Filipendula ulmaria 
+Mullein-Verbascum 
+Pickerelweed-Pontederia cordata 
+Ramsons-Allium ursinum 
+Red_clover-Allium ursinum

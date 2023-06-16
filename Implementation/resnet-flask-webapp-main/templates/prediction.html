@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>prediction</title>
+	<link rel="stylesheet" href="2nd.css">
+</head>
+<body>
+	<style>
+		body {
+    font-family: 'Fredoka One', cursive;
+    /* color: white; */
+    margin: 0px;
+    padding: 0px;
+    /* background: url(img/people-2604149_1920.jpg);
+    background: url(img/bg.png);
+    background: url(img/dumbbell-1966247_1920.jpg); */
+}
+.header{
+background-color: green;
+}
+.left {
+    position: absolute;
+    left: 54px;
+    /* top: 20px; */
+    /* border: 2px solid red; */
+    display: inline-block;
+}
+
+.left img {
+    width: 125px;
+    filter: invert(100%);
+}
+
+.left div {
+    text-align: center;
+}
+
+.mid {
+    display: block;
+    width: 35%;
+    margin: 0px auto;
+    /* border: 2px solid green; */
+}
+
+.navbar {
+    display: inline-block;
+}
+
+.navbar li {
+    display: inline-block;
+    font-size: 20px;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 16px 23px;
+}
+
+.navbar li a:hover,
+.navbar li a.active {
+    color: gray;
+    text-decoration: underline;
+}
+
+.right {
+    position: absolute;
+    right: 34px;
+    top: 7px;
+    /* border: 2px solid yellow; */
+    display: inline-block;
+}
+
+
+
+.btn {
+    margin: 5px 9px;
+    background-color: black;
+    color: white;
+    padding: 4px 14px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    font-family: 'Fredoka One', cursive;
+}
+
+.btn:hover {
+    background-color: rgb(46, 45, 45);
+}
+
+
+/* Section main */
+#main{
+    background: url(4.jpg);
+    height: 557px;
+}
+#two{
+    color: white;
+    text-align: center;
+}
+/* #two h1,h3{
+    font-size: 2em;
+} */
+#two h1{
+    font-size: 4em;
+}
+#two h3{
+    font-size: 2em;
+}
+/* Section1 */
+#one{
+    border: 2px solid red;
+    width: 60%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+}
+#one h1{
+    text-align: center;
+    font-size: 2em;
+}
+#one img {
+    width: 227px;
+    height: 182px;
+}
+
+#three{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    border: 2px solid black;
+    margin: auto;
+}
+#three2{
+    display: flex;
+    flex-direction: column;
+}
+
+#three img {
+    width: 526px;
+    height: 741px;
+}
+#three2 img{
+    width: 100px;
+    height: 100px;
+}
+#three21, #three22,#three23{
+    display: flex;
+    flex-direction: row;
+}
+.padd{
+    margin: 19px 0;
+}
+.centre{
+    text-align: center;
+    margin: auto;
+}
+
+
+
+/* upload image  */
+#four img {
+    width: 358px;
+    height: 253px;
+    margin-top: 20px;
+}
+#btn {
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 7px;
+    width: 203px;
+    height: 65px;
+    font-size: 19px;
+    background-color: #9b94ff;
+}
+
+#imp{
+    background: url(12.jpg);
+}
+
+#five{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid green;
+    margin: auto;
+    text-align: center;
+    height: 924px;
+    /* align-items: center; */
+}
+#five h1{
+    text-align: center;
+    margin: auto;
+}
+#five1{
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    margin-top: 160px;
+}
+.des {
+    width: 707px;
+    height: 239px;
+    margin: 13px 0;
+    /* background: #d8d8d8; */
+    background: #9eacff;
+}
+#five1 div{
+    border: 2px solid #9eacff;
+    border-radius: 31px;
+}
+#five2 {
+    border: 2px solid #9eacff;
+    border-radius: 31px;
+    margin: 172px 40px;
+    width: 815px;
+    height: 471px;
+    background: #9eacff;
+}
+textarea {
+    background: #ececec;
+    border: 2px solid blue;
+    border-radius: 14px;
+    font-size: 15px;
+    font-style: normal;
+    font-family: monospace;
+    font-weight: bold;
+}
+.cls:focus{
+    border: 2px solid blue;
+    box-shadow: 0 0 0 0.2rem rgba(71, 129, 255, 0.25)
+}
+	</style>
+	<h2 class="centre">Details</h2>
+        <section id="five" style="background-image:url({{url_for('static',filename='12.jpg')}})">
+            <div id="five1">
+                <div class="des">
+                    <h3>Edible/Not Edible</h3>
+                    <textarea class="cls" cols="36" rows="7">               Edible</textarea>
+                </div>
+                <div class="des">
+                    <h3>Scientific Name</h3>
+                    <textarea class="cls" cols="36" rows="7">{{data}}</textarea>
+                    
+                </div>
+                
+            </div>
+            <div id="five2">
+                <h3>Description</h3>
+                <textarea class="cls" cols="92" rows="21">{{d}}</textarea>
+
+            </div>
+        </section>
+
+	<!-- <center>
+		<h1>Welcome to prediction</h1>
+
+		<h3>Prediction is : {{data}}</h3>
+
+	</center> -->
+
+</body>
+</html>

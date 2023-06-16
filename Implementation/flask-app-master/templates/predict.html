@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="image-selector" type="file">    
+    <button id="predict-button">Predict</button>
+    <p style="font-weight:bold">Predictions: {{data}}</p>    
+    <!-- <p>alfalfa:<span id="alfalfa-prediction"></span></p>
+    <p>allium:<span id="allium-prediction"></span></p>
+    <p>borage:<span id="borage-prediction"></span></p>
+    <p>burdock:<span id="burdock-prediction"></span></p>
+    <p>calendula:<span id="calendula-prediction"></span></p>
+    <p>cattail:<span id="cattail-prediction"></span></p>
+    <p>chickweed:<span id="chickweed-prediction"></span></p>
+    <p>chicory:<span id="chicory-prediction"></span></p>
+    <p>chive_blossom:<span id="chive_blossom-prediction"></span></p>
+    <p>coltsfoot:<span id="coltsfoot-prediction"></span></p>
+    <p>common_mallow:<span id="common_mallow-prediction"></span></p>
+    <p>common_milkweed:<span id="common_milkweed-prediction"></span></p>
+    <p>common_vetch:<span id="common_vetch-prediction"></span></p>
+    <p>common_yarrow:<span id="common_yarrow-prediction"></span></p>
+    <p>coneflower:<span id="coneflower-prediction"></span></p>
+    <p>cow_parsley:<span id="cow_parsley-prediction"></span></p>
+    <p>cowslip:<span id="cowslip-prediction"></span></p>
+    <p>crimson_clover:<span id="crimson_clover-prediction"></span></p>
+    <p>crithmum_maritimum:<span id="crithmum_maritimum-prediction"></span></p>
+    <p>daisy:<span id="daisy-prediction"></span></p>
+    <p>dandelion:<span id="dandelion-prediction"></span></p>
+    <p>fennel:<span id="fennel-prediction"></span></p>
+    <p>fireweed:<span id="fireweed-prediction"></span></p>
+    <p>gardenia:<span id="gardenia-prediction"></span></p>
+    <p>garlic_mustard:<span id="garlic_mustard-prediction"></span></p>
+    <p>geranium:<span id="geranium-prediction"></span></p>
+    <p>ground_ivy:<span id="ground_ivy-prediction"></span></p>
+    <p>harebell:<span id="harebell-prediction"></span></p>
+    <p>henbit:<span id="henbit-prediction"></span></p>
+    <p>knapweed:<span id="knapweed-prediction"></span></p>
+    <p>meadowsweet:<span id="meadowsweet-prediction"></span></p>
+    <p>mullein:<span id="mullein-prediction"></span></p>
+    <p>pickerelweed:<span id="pickerelweed-prediction"></span></p>
+    <p>ramsons:<span id="ramsons-prediction"></span></p>
+    <p>red_clover:<span id="red_clover-prediction"></span></p> -->
+    <img id="selected-image" src=""/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        
+    <!-- <script>
+        let base64Image;
+        $("#image-selector").change(function() {
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                let dataURL = reader.result;
+                $('#selected-image').attr("src", dataURL);
+                base64Image = dataURL.replace("data:image/png;base64,","");
+                console.log(base64Image);
+            }
+            reader.readAsDataURL($("#image-selector")[0].files[0]);
+            $("#prediction").text("");
+            
+            // $("#alfalfa-prediction").text("");
+            // $("#allium-prediction").text("");
+            // $("#borage-prediction").text("");
+            // $("#burdock-prediction").text("");
+            // $("#calendula-prediction").text("");
+            // $("#cattail-prediction").text("");
+            // $("#chickweed-prediction").text("");
+            // $("#chicory-prediction").text("");
+            // $("#chive_blossom-prediction").text("");
+            // $("#coltsfoot-prediction").text("");
+            // $("#common_mallow-prediction").text("");
+            // $("#common_milkweed-prediction").text("");
+            // $("#common_vetch-prediction").text("");
+            // $("#common_yarrow-prediction").text("");
+            // $("#coneflower-prediction").text("");
+            // $("#cow_parsley-prediction").text("");
+            // $("#cowslip-prediction").text("");
+            // $("#crimson_clover-prediction").text("");
+            // $("#crithmum_maritimum-prediction").text("");
+            // $("#daisy-prediction").text("");
+            // $("#dandelion-prediction").text("");
+            // $("#fennel-prediction").text("");
+            // $("#fireweed-prediction").text("");
+            // $("#gardenia-prediction").text("");
+            // $("#garlic_mustard-prediction").text("");
+            // $("#geranium-prediction").text("");
+            // $("#ground_ivy-prediction").text("");
+            // $("#harebell-prediction").text("");
+            // $("#henbit-prediction").text("");
+            // $("#knapweed-prediction").text("");
+            // $("#meadowsweet-prediction").text("");
+            // $("#mullein-prediction").text("");
+            // $("#pickerelweed-prediction").text("");
+            // $("#ramsons-prediction").text("");
+            // $("#red_clover-prediction").text("");
+        });
+    
+        $("#predict-button").click(function(){
+            let message = {
+                image: base64Image
+            }
+            console.log(message);
+            $.post("http://127.0.0.1:5000/predict", JSON.stringify(message), function(response){
+                $("#prediction").text(response.prediction.pred);
+                // $("#alfalfa-prediction").text(response.prediction.alfalfa.toFixed(6));
+                // $("#allium-prediction").text(response.prediction.allium.toFixed(6));
+                // $("#borage-prediction").text(response.prediction.borage.toFixed(6));
+                // $("#burdock-prediction").text(response.prediction.burdock.toFixed(6));
+                // $("#calendula-prediction").text(response.prediction.calendula.toFixed(6));
+                // $("#cattail-prediction").text(response.prediction.cattail.toFixed(6));
+                // $("#chickweed-prediction").text(response.prediction.chickweed.toFixed(6));
+                // $("#chicory-prediction").text(response.prediction.chicory.toFixed(6));
+                // $("#chive_blossom-prediction").text(response.prediction.chive_blossom.toFixed(6));
+                // $("#coltsfoot-prediction").text(response.prediction.coltsfoot.toFixed(6));
+                // $("#common_mallow-prediction").text(response.prediction.common_mallow.toFixed(6));
+                // $("#common_milkweed-prediction").text(response.prediction.common_milkweed.toFixed(6));
+                // $("#common_vetch-prediction").text(response.prediction.common_vetch.toFixed(6));
+                // $("#common_yarrow-prediction").text(response.prediction.common_yarrow.toFixed(6));
+                // $("#coneflower-prediction").text(response.prediction.coneflower.toFixed(6));
+                // $("#cow_parsley-prediction").text(response.prediction.cow_parsley.toFixed(6));
+                // $("#cowslip-prediction").text(response.prediction.cowslip.toFixed(6));
+                // $("#crimson_clover-prediction").text(response.prediction.crimson_clover.toFixed(6));
+                // $("#crithmum_maritimum-prediction").text(response.prediction.crithmum_maritimum.toFixed(6));
+                // $("#daisy-prediction").text(response.prediction.daisy.toFixed(6));
+                // $("#dandelion-prediction").text(response.prediction.dandelion.toFixed(6));
+                // $("#fennel-prediction").text(response.prediction.fennel.toFixed(6));
+                // $("#fireweed-prediction").text(response.prediction.fireweed.toFixed(6));
+                // $("#gardenia-prediction").text(response.prediction.gardenia.toFixed(6));
+                // $("#garlic_mustard-prediction").text(response.prediction.garlic_mustard.toFixed(6));
+                // $("#geranium-prediction").text(response.prediction.geranium.toFixed(6));
+                // $("#ground_ivy-prediction").text(response.prediction.ground_ivy.toFixed(6));
+                // $("#harebell-prediction").text(response.prediction.harebell.toFixed(6));
+                // $("#henbit-prediction").text(response.prediction.henbit.toFixed(6));
+                // $("#knapweed-prediction").text(response.prediction.knapweed.toFixed(6));
+                // $("#meadowsweet-prediction").text(response.prediction.meadowsweet.toFixed(6));
+                // $("#mullein-prediction").text(response.prediction.mullein.toFixed(6));
+                // $("#pickerelweed-prediction").text(response.prediction.pickerelweed.toFixed(6));
+                // $("#ramsons-prediction").text(response.prediction.ramsons.toFixed(6));
+                // $("#red_clover-prediction").text(response.prediction.red_clover.toFixed(6));
+                console.log(response);
+            });
+        });       
+    </script> -->
+</body>
+</html>

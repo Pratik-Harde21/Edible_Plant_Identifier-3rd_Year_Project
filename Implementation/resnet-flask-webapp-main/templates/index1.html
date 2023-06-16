@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Identifier</title>
+    <!-- <link rel="stylesheet" href="2nd.css"> -->
+</head>
+
+<body>
+    <style>
+        body {
+    font-family: 'Fredoka One', cursive;
+    /* color: white; */
+    margin: 0px;
+    padding: 0px;
+    /* background: url(img/people-2604149_1920.jpg);
+    background: url(img/bg.png);
+    background: url(img/dumbbell-1966247_1920.jpg); */
+}
+.header{
+background-color: green;
+}
+.left {
+    position: absolute;
+    left: 54px;
+    /* top: 20px; */
+    /* border: 2px solid red; */
+    display: inline-block;
+}
+
+.left img {
+    width: 125px;
+    filter: invert(100%);
+}
+
+.left div {
+    text-align: center;
+}
+
+.mid {
+    display: block;
+    width: 35%;
+    margin: 0px auto;
+    /* border: 2px solid green; */
+}
+
+.navbar {
+    display: inline-block;
+}
+
+.navbar li {
+    display: inline-block;
+    font-size: 20px;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 16px 23px;
+}
+
+.navbar li a:hover,
+.navbar li a.active {
+    color: gray;
+    text-decoration: underline;
+}
+
+.right {
+    position: absolute;
+    right: 34px;
+    top: 7px;
+    /* border: 2px solid yellow; */
+    display: inline-block;
+}
+
+
+
+.btn {
+    margin: 5px 9px;
+    background-color: black;
+    color: white;
+    padding: 4px 14px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    font-family: 'Fredoka One', cursive;
+}
+
+.btn:hover {
+    background-color: rgb(46, 45, 45);
+}
+
+
+/* Section main */
+#main{
+    /* background: url(/templates/4.jpg); */
+    height: 557px;
+    background-image:url({{url_for('static',filename='4.jpg')}});
+}
+#two{
+    color: white;
+    text-align: center;
+}
+/* #two h1,h3{
+    font-size: 2em;
+} */
+#two h1{
+    font-size: 4em;
+}
+#two h3{
+    font-size: 2em;
+}
+/* Section1 */
+#one{
+    border: 2px solid red;
+    width: 60%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+}
+#one h1{
+    text-align: center;
+    font-size: 2em;
+}
+#one img {
+    width: 227px;
+    height: 182px;
+}
+
+#three{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    border: 2px solid black;
+    margin: auto;
+}
+#three2{
+    display: flex;
+    flex-direction: column;
+}
+
+#three img {
+    width: 526px;
+    height: 741px;
+}
+#three2 img{
+    width: 100px;
+    height: 100px;
+}
+#three21, #three22,#three23{
+    display: flex;
+    flex-direction: row;
+}
+.padd{
+    margin: 19px 0;
+}
+.centre{
+    text-align: center;
+    margin: auto;
+}
+
+
+
+/* upload image  */
+#four img {
+    width: 358px;
+    height: 253px;
+    margin-top: 20px;
+}
+#btn {
+    margin: 11px 0 0px 0;
+    border: 2px solid black;
+    border-radius: 7px;
+    width: 259px;
+    height: 65px;
+    font-size: 19px;
+    background-color: #9b94ff;
+
+}
+
+#imp{
+    /* background-image: url(12.jpg); */
+    background-image:url({{url_for('static',filename='12.jpg')}});
+}
+
+#five{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid green;
+    margin: auto;
+    text-align: center;
+    height: 500px;
+    /* align-items: center; */
+}
+#five h1{
+    text-align: center;
+    margin: auto;
+}
+#five1{
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+}
+.des {
+    width: 707px;
+    height: 239px;
+    margin: 13px 0;
+    /* background: #d8d8d8; */
+    background: #9eacff;
+}
+#five1 div{
+    border: 2px solid #9eacff;
+    border-radius: 31px;
+}
+#five2 {
+    border: 2px solid #9eacff;
+    border-radius: 31px;
+    margin: 13px 40px;
+    width: 815px;
+    height: 471px;
+    background: #9eacff;
+}
+textarea {
+    background: #ececec;
+    border: 2px solid blue;
+    border-radius: 14px;
+    font-size: 15px;
+    font-style: normal;
+    font-family: monospace;
+    font-weight: bold;
+}
+.cls:focus{
+    border: 2px solid blue;
+    box-shadow: 0 0 0 0.2rem rgba(71, 129, 255, 0.25)
+}
+#display-image{
+    width: 400px;
+    height: 225px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+    margin: 17px 1px 10px 757px;
+    border-radius: 29px;
+}
+#btn1{
+    width: 5%;
+    height: 33px;
+    background: #0088ff;
+    outline: none;
+}
+    </style>
+    <section id="main" >
+        <!-- <img src="{{url_for('static', filename='4.jpg')}}" alt=""> -->
+        <header class="header">
+            <!-- left box for logo -->
+            <div class="left">
+                <img src="img/gym-clipart-gym-logo-7.jpg" alt="">
+                <div style="color: white;">WHATISTHEPLANT</div>
+            </div>
+
+            <!-- Mid box for navbar -->
+            <div class="mid">
+                <ul class="navbar">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <button class="btn" onclick="location.href='index1.html'">Get Started</button>
+            </div>
+
+        </header>
+        <section id="two">
+            <h1>EDIBLE PLANT IDENTIFIER</h1>
+            <h1>WHATISTHEPLANT</h1>
+            <h3>Upload a picture and tell you what is the plant, tree, flower</h3>
+        </section>
+    </section>
+    <section id="imp">
+        <section id="four" class="centre">
+            <div>
+                <!-- <img src="6.jpg" alt=""> -->
+                <!-- <img src="test3.jpg" alt=""> -->
+                
+                <!-- <button type="file" name="img" id="btn" style="display:block;" onclick="document.getElementById('getFile').click()">Upload Image here</button> -->
+                <!-- <input type='file' id="getFile" style="display:none" onclick="fun()"> -->
+                <form action="prediction" method="POST" enctype="multipart/form-data">
+                    <!-- <button type="file" name="img" id="btn" accept="image/jpeg, image/png, image/jpg" style="display:block;"><input type="file" name="img"> </button> -->
+                    <!-- <div id="display-image"></div> -->
+                    <input type="file" name="img" id="btn" accept="image/jpeg, image/png, image/jpg">
+                    
+                    <div id="display-image"></div>
+                    <input type="submit" id="btn1" name="btn">
+                      
+                </form>
+                
+  
+
+
+            </div>
+        </section>
+        <!-- <h2 class="centre">Details</h2>
+        <section id="five">
+            <div id="five1">
+                <div class="des">
+                    <h3>Edible/Not Edible</h3>
+                    <textarea class="cls" cols="36" rows="7">               Edible</textarea>
+                </div>
+                <div class="des">
+                    <h3>Scientific Name</h3>
+                    <textarea class="cls" cols="36" rows="7">           {{data}}</textarea>
+                    
+                </div>
+                
+            </div>
+            <div id="five2">
+                <h3>Description</h3>
+                <textarea class="cls" cols="92" rows="21">Both leaves and flowers are edible. The blossoms have a gentle and sweet taste with a hint of bean flavour when eaten raw.Break up the flower heads and sprinkle the blossoms into salads. They are also a good addition in baking and look beautiful as a garnish.The leaves are edible but may cause bloating.Do not consume if pregnant or breastfeeding</textarea>
+
+            </div>
+        </section> -->
+    </section>
+
+
+
+    <!-- <section id="one">
+        <section>
+            <h1>Identify, explore and share your observations of wild plants</h1>
+            <p ALIGN=CENTER>Patrick... is a tool to help to identify plants with pictures. It is organized in different
+                thematic and geographical floras. Choose the one that corresponds to your region or area of interest
+                from the list below. If you don't know what to choose, select "World flora" which has the widest
+                coverage but will give less accurate results than a more focused flora.</p>
+        </section>
+        <section>
+            <img src="1.jpg" alt="">
+        </section> -->
+    <!-- </section>
+    <div class="centre">
+        <h1>Our Reliable Services</h1>
+        <h3>Based on the AI technololgy, Whatistheplant is the most
+            accurate plant identification tool you ever meet</h3>
+    </div>
+    <section id="three">
+        <section id="three1">
+            <img src="5.jpg" alt="">
+        </section>
+        <section id="three2">
+            <section id="three21" class="padd">
+                <div>
+                    <img src="a.png" alt="">
+                </div>
+                <div>
+                    <h1>Available 24/7</h1>
+                    <h3>Just drop the plant picture and our services are always ready for the plant identification.</h3>
+                </div>
+            </section>
+            <section id="three22" class="padd">
+                <div>
+                    <img src="b.png" alt="">
+                </div>
+                <div>
+                    <h1>Creative results</h1>
+                    <h3>Whatistheplant will analyze the plant picture and return several possible results with their
+                        scores.</h3>
+                </div>
+            </section>
+            <section id="three23" class="padd">
+                <div>
+                    <img src="c.png" alt="">
+                </div>
+                <div>
+                    <h1>Fast and free</h1>
+                    <h3>The analyzing and recognizing process is fast and you will get your answer within a few seconds.
+                    </h3>
+                </div>
+            </section>
+        </section>
+    </section> -->
+    <script>
+        const image_input = document.querySelector("#btn");
+
+        image_input.addEventListener("change", function() {
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+            const uploaded_image = reader.result;
+            document.querySelector("#display-image").style.backgroundImage = `url(${uploaded_image})`;
+        });
+        reader.readAsDataURL(this.files[0]);
+});
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

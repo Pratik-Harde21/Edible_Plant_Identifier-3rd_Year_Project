@@ -1,0 +1,56 @@
+body {
+    font-family: 'Fredoka One', cursive;
+    /* color: white; */
+    margin: 0px;
+    padding: 0px;
+    /* background: url(img/people-2604149_1920.jpg);
+    background: url(img/bg.png);
+    background: url(img/dumbbell-1966247_1920.jpg); */
+}
+.header{
+background-color: green;
+}
+.left {
+    position: absolute;
+    left: 54px;
+    /* top: 20px; */
+    /* border: 2px solid red; */
+    display: inline-block;
+}
+
+.left img {
+    width: 125px;
+    filter: invert(100%);
+}
+
+.left div {
+    text-align: center;
+}
+
+.mid {
+    display: block;
+    width: 35%;
+    margin: 0px auto;
+    /* border: 2px solid green; */
+}
+
+.navbar {
+    display: inline-block;
+}
+
+.navbar li {
+    display: inline-block;
+    font-size: 20px;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 16px 23px;
+}
+
+.navbar li a:hover,
+.navbar li a.active {
+    color: gray;
+    text-decoration: underline;
+}
